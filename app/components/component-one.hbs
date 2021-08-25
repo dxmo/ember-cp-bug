@@ -1,0 +1,23 @@
+<ComponentTwo @model={{this.model}} as |cpbug|>
+  <p>
+    <label>
+      Updates property via direct hash reference (does not work)
+    </label>
+    <div>
+      <Input @type='text' @value={{cpbug.testProperty}} />
+    </div>
+  </p>
+
+  <p>
+    <label>
+      Updates property via model reference (works)
+    </label>
+    <div>
+      <Input @type='text' @value={{cpbug.model.testProperty}} />
+    </div>
+  </p>
+
+  <p>
+    model.testProperty = {{cpbug.model.testProperty}}
+  </p>
+</ComponentTwo>
